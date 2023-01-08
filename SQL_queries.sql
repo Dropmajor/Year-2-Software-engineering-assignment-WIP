@@ -81,20 +81,3 @@ INSERT INTO `dietary_type` VALUES (NULL, 'Vegan');
 INSERT INTO `dietary_type` VALUES (NULL, 'Kosher');
 INSERT INTO `dietary_type` VALUES (NULL, 'Halal');
 INSERT INTO `dietary_type` VALUES (NULL, 'Gluten-free');
-
--- Example meal items
-INSERT INTO `meal` VALUES (NULL, 'Full english', 'a', '1', 1200, 0, 3);
-INSERT INTO `meal` VALUES (NULL, 'Cheese Pizza', 'a', '2', 1500, 0, 3);
-INSERT INTO `meal` VALUES (NULL, 'Chocolate cake', 'a', '3', 1500, 0, 3);
-
--- Queries (PHP)
--- Get all meals in a weight range
-SELECT * FROM (SELECT * FROM meal WHERE meal_id LIKE 'weight band') AS `meals`
-    JOIN meal_type ON `meals`.meal_type=meal_type.type_id;
--- Get a user account
-SELECT * FROM user WHERE user_id = 1;
--- Create meal record
-INSERT INTO meal VALUES (NULL, 'name', 'description' ,'meal type', 'calories', 'dietary type', 'weight band');
--- Create user account
-INSERT INTO user VALUES (NULL, 'username', 'password', 'weight', 'height', 'measurement choice', 'dietary preference');
--- create user meal link
